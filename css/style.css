@@ -1,0 +1,49 @@
+.container h3 {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.row button {
+	font-weight: bold;
+	font-size: 50px;
+	padding: 30px;
+}
+
+.container {
+	padding:50px;
+}
+
+.choice {
+	font-weight: bold;
+	font-size: 40px;
+	color: #FFF;
+}
+
+.fa {
+	padding: 15px;
+}
+
+.btn:hover {
+	background-color: blue;
+	border: 5px solid #FFF;
+	border-radius: 20px;
+}
+
+.col-xs-2 {
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.col-xs-5 {
+	font-size: 30px;
+}
+
+.badge {
+	
+	font-size: 45px !important;
+}
+
+body {
+	background-color: yellow;
+}
+
