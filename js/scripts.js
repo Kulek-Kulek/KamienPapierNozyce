@@ -24,7 +24,9 @@ var gameState = 'notStarted',
 
     var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
-    welcomeElem = document.getElementById('js-welcomeElement');
+    compIsWinnerElem = document.getElementById("js-computerWinsElement");
+    playerIsWinnerElem = document.getElementById("js-playerWinsElement");
+    welcomeElem = document.getElementById('js-welcomeElement'); 
     resultsElem = document.getElementById('js-resultsTableElement');
 
     function setGameElements() {
@@ -32,25 +34,46 @@ var gameState = 'notStarted',
     case 'started':
         newGameElem.style.display = 'none';
         welcomeElem.style.display = "none";
-        pickElem.style.display = 'block';
+        compIsWinnerElem.style.display = "none";
+        playerIsWinnerElem.style.display = "none";
+        pickElem.style.display = 'block'; 
         resultsElem.style.display = 'block';
       break;
-    case 'ended':
+    case 'playerWins':
         newGameBtn.innerText = 'Play again';
-        newGameElem.style.display = 'block';
-        welcomeElem.style.display = "block";
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'none';
+    	newGameElem.style.display = 'none';
+        welcomeElem.style.display = "none";
+        compIsWinnerElem.style.display = "none";
+        playerIsWinnerElem.style.display = "block";
+        pickElem.style.display = 'none'; 
+        resultsElem.style.display = 'block';
+      break
+    case "computerWins":
+    	newGameBtn.innerText = 'Play again';
+    	newGameElem.style.display = 'none';
+        welcomeElem.style.display = "none";
+        compIsWinnerElem.style.display = "block";
+        playerIsWinnerElem.style.display = "none";
+        pickElem.style.display = 'none'; 
+        resultsElem.style.display = 'block';
+      break
+    
+
     case 'notStarted':
+    	compIsWinnerElem.style.display = "block";
+        playerIsWinnerElem.style.display = "block";
     default:
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
+        compIsWinnerElem.style.display = "none";
+        playerIsWinnerElem.style.display = "none";
   }
+
 }
 
-
 setGameElements();
+
 
 var playerPointsElem = document.getElementById('js-playerPoints'),
     playerNameElem = document.getElementById('js-playerName'),
@@ -111,10 +134,10 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == 'player') {
-        playerResultElem.innerHTML = "Wins!";
+        playerResultElem.innerHTML = player.name + " wins!";
         player.score++;
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "I win! Try again";
+        computerResultElem.innerHTML = "Computer wins! Try again";
         computer.score++;
        
     }
@@ -143,15 +166,19 @@ function setGamePoints() {
 }
 
 
+
 function gameOver() {
 
 if (player.score == 10) {
-    gameState = 'ended';
+    
+    gameState = 'playerWins'
+    
     setGameElements();
   }
 
   if (computer.score == 10) {
- 	gameState = 'ended';
+ 	
+ 	gameState = 'computerWins'
  	setGameElements();
   }
 
