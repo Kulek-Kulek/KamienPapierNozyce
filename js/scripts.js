@@ -133,6 +133,7 @@ function playerPick(playerPick) {
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
+    gameOver()
 }
 
 
@@ -154,8 +155,10 @@ if (player.score == 10) {
  	setGameElements();
   }
 
-  gameOver()
+  
 }
+
+
 
 
 
