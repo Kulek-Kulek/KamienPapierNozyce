@@ -17,6 +17,9 @@
 	font-weight: bold;
 	font-size: 40px;
 	color: #FFF;
+	padding: 50px;
+	background-color: black;
+
 }
 
 .fa {
@@ -43,7 +46,4 @@
 	font-size: 45px !important;
 }
 
-body {
-	background-color: yellow;
-}
 

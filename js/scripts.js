@@ -24,17 +24,23 @@ var gameState = 'notStarted',
 
     var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
+    welcomeElem = document.getElementById('js-welcomeElement');
     resultsElem = document.getElementById('js-resultsTableElement');
 
     function setGameElements() {
   switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
+        welcomeElem.style.display = "none";
         pickElem.style.display = 'block';
         resultsElem.style.display = 'block';
       break;
     case 'ended':
-        newGameBtn.innerText = 'Jeszcze raz';
+        newGameBtn.innerText = 'Play again';
+        newGameElem.style.display = 'block';
+        welcomeElem.style.display = "block";
+        pickElem.style.display = 'none';
+        resultsElem.style.display = 'none';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -56,11 +62,12 @@ function newGame() {
     player.score = computer.score = 0;
     gameState = 'started';
     setGameElements();
-
+    setGamePoints();
     playerNameElem.innerHTML = player.name;
   }
 
 }
+
 
 function playerPick(playerPick) {
     console.log(playerPick);
@@ -104,15 +111,18 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == 'player') {
-        playerResultElem.innerHTML = "Win!";
+        playerResultElem.innerHTML = "Wins!";
         player.score++;
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "Win!";
+        computerResultElem.innerHTML = "I win! Try again";
         computer.score++;
-        
+       
     }
-
+    setGamePoints();
+    
 }
+
+
 
 
 
@@ -129,5 +139,24 @@ function playerPick(playerPick) {
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
-    
 }
+
+
+function gameOver() {
+
+if (player.score == 10) {
+    gameState = 'ended';
+    setGameElements();
+  }
+
+  if (computer.score == 10) {
+ 	gameState = 'ended';
+ 	setGameElements();
+  }
+
+  gameOver()
+}
+
+
+
+
