@@ -41,7 +41,7 @@ var gameState = 'notStarted',
       break;
     case 'playerWins':
         newGameBtn.innerText = 'Play again';
-    	newGameElem.style.display = 'none';
+    	newGameElem.style.display = 'block';
         welcomeElem.style.display = "none";
         compIsWinnerElem.style.display = "none";
         playerIsWinnerElem.style.display = "block";
@@ -50,15 +50,13 @@ var gameState = 'notStarted',
       break
     case "computerWins":
     	newGameBtn.innerText = 'Play again';
-    	newGameElem.style.display = 'none';
+    	newGameElem.style.display = 'block';
         welcomeElem.style.display = "none";
         compIsWinnerElem.style.display = "block";
         playerIsWinnerElem.style.display = "none";
         pickElem.style.display = 'none'; 
         resultsElem.style.display = 'block';
       break
-    
-
     case 'notStarted':
     	compIsWinnerElem.style.display = "block";
         playerIsWinnerElem.style.display = "block";
@@ -69,7 +67,6 @@ var gameState = 'notStarted',
         compIsWinnerElem.style.display = "none";
         playerIsWinnerElem.style.display = "none";
   }
-
 }
 
 setGameElements();
@@ -137,15 +134,20 @@ function checkRoundWinner(playerPick, computerPick) {
         playerResultElem.innerHTML = player.name + " wins!";
         player.score++;
     } else if (winnerIs == 'computer') {
-        computerResultElem.innerHTML = "Computer wins! Try again";
-        computer.score++;
-       
+        computerResultElem.innerHTML = getPossibleAnswer();
+        computer.score++;      
     }
-    setGamePoints();
-    
+    setGamePoints();    
 }
 
+var z = Math.random();
 
+Math.floor(Math.random()*5)
+
+function getPossibleAnswer() {
+    var possibleAnswers = ['shit happaens', 'keep your hair on', "don't give up - try again!", "uppps, again?", "maybe next time"];
+    return possibleAnswers[Math.floor(Math.random()*5)];
+}
 
 
 
@@ -169,24 +171,13 @@ function setGamePoints() {
 
 function gameOver() {
 
-if (player.score == 10) {
-    
-    gameState = 'playerWins'
-    
+if (player.score == 10) {   
+    gameState = 'playerWins'   
     setGameElements();
   }
 
-  if (computer.score == 10) {
- 	
+  if (computer.score == 10) {	
  	gameState = 'computerWins'
  	setGameElements();
-  }
-
-  
+  } 
 }
-
-
-
-
-
-

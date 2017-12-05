@@ -8,16 +8,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
   </head>
   <body>
-  	<div id="js-playerWinsElement" class="container">
-		<h3 class="text center">
-		CONGRATULATIOS! You've won</h3>
+  	<div id="js-playerWinsElement" class="container win">
+  		<h3 class="text-center">CONGRATULATIOS! You've won!!!</h3>
 	</div>
-	<div id="js-computerWinsElement" class="text-center">
-		<h3>Upppps! Compuetr wins! But cheer up - better luck next time!</h3>
+	<div id="js-computerWinsElement" class="container lose">
+		<h3 class="text-center">Upppps! Compuetr wins!<br>But cheer up - better luck next time!</h3>
 	</div>
-    <div id="js-welcomeElement" class="container">
+    <div id="js-welcomeElement" class="container welcome">
   		<h3 class="text-center">
-    		Welcome to the game<br>
+    		<p>Welcome to the game</p><br>
     		<span class="label label-default">Rock</span>
     		<span class="label label-info">Paper</span>
     		<span class="label label-danger">Scissors</span>
@@ -31,25 +30,25 @@
   		</div>
 	</div>
 
-	<div id="js-playerPickElement" class="container">
+	<div id="js-playerPickElement" class="container ">
 
-  		<div class="row text-center">
-  			<h3 class="choice">Make your choice now. Good luck!!!</h3>
+  		<div class="row text-center play">
+  			<h3>Make your choice now. Good luck!!!</h3>
   		
     		<button id="js-playerPick_rock" class="btn">
-      			<span class="badge">
+      			<span class="badge one">
         			<i class="fa fa-hand-rock-o" aria-hidden="true"></i>
       			</span>
       			Rock
     		</button>
     		<button id="js-playerPick_paper"  class="btn">
-      			<span class="badge">
+      			<span class="badge one">
       			<i class="fa fa-hand-paper-o" aria-hidden="true"></i>
       			</span>
       			Paper
     		</button>
     		<button id="js-playerPick_scissors"  class="btn">
-      			<span class="badge">
+      			<span class="badge one">
       			<i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
       			</span>
       			Scissors
@@ -59,49 +58,52 @@
 	<div id="js-resultsTableElement" class="container">
   		<div class="row">
     		<div class="col-xs-5 text-center">
-      			<span id="js-playerPoints" class="badge">
+      			<span id="js-playerPoints" class="badge red">
       			0
       			</span>
-      			<span id="js-playerName">
+      			<span id="js-playerName" class="data">
       			Player Name
       			</span>
     		</div>
-    		<div class="col-xs-2 text-center">
-      			VS
+    		<div class="col-xs-2 text-center" class="white">
+      			<p>VS</p>
     		</div>
     		<div class="col-xs-5 text-center score">
-      			<span id="js-computerPoints" class="badge">
+      			<span id="js-computerPoints" class="badge red">
       			0
       			</span>
-      			Computer
+      			<span class="data">Computer</span>
     		</div>
   		</div>
   		<div class="row">
     		<div class="col-xs-5 text-center">
-      			<span id="js-playerPick">
+      			<span id="js-playerPick" class="data">
         			Player selection
       			</span>
     		</div>
     		<div class="col-xs-2"></div>
     		<div class="col-xs-5 text-center">
-      			<span id="js-computerPick">
+      			<span id="js-computerPick" class="data">
         			Computer selection
       			</span>
     		</div>
   		</div>
   		<div class="row">
     		<div class="col-xs-5 text-center">
-      			<span id="js-playerResult">
+      			<span id="js-playerResult" class="data">
         			Player Score
       			</span>
     		</div>
     		<div class="col-xs-2"></div>
     		<div class="col-xs-5 text-center">
-      			<span id="js-computerResult">
+      			<span id="js-computerResult" class="data">
         			Computer Score
       			</span>
     		</div>
   		</div>
+  		<audio autoplay><source src="welcome.mp3" type="audio/mp3">
+</audio>
+
 	</div>
 	
   <script type="text/javascript" src="js/scripts.js"></script>
