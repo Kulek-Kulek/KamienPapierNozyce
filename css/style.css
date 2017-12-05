@@ -32,11 +32,24 @@ body {
 	padding: 15px;
 }
 
-.btn:hover {
+.paper:hover {
+	background-color: orange;
+	border: 5px solid #FFF;
+	border-radius: 20px;
+}
+
+.rock:hover {
 	background-color: blue;
 	border: 5px solid #FFF;
 	border-radius: 20px;
 }
+
+.scissors:hover {
+	background-color: green;
+	border: 5px solid #FFF;
+	border-radius: 20px;
+}
+
 
 .col-xs-2 {
 	font-size: 35px;
@@ -81,3 +94,4 @@ body {
 	font-weight: bold;
 	font-size: 70px;
 }
+
