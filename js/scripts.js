@@ -6,10 +6,13 @@ newGameBtn.addEventListener('click', newGame);
 var pickRock = document.getElementById('js-playerPick_rock'),
      pickPaper = document.getElementById('js-playerPick_paper'),
      pickScissors = document.getElementById('js-playerPick_scissors');
+     changeColor = document.getElementById("js-playerPick");
 
-pickRock.addEventListener('click', function() { playerPick('rock') });
-pickPaper.addEventListener('click', function() { playerPick('paper') });
-pickScissors.addEventListener('click', function() { playerPick('scissors') });
+     
+
+pickRock.addEventListener('click', function() { playerPick('rock'), changeColor.style.color = "blue"} );
+pickPaper.addEventListener('click', function() { playerPick('paper'), changeColor.style.color = "orange" });
+pickScissors.addEventListener('click', function() { playerPick('scissors'), changeColor.style.color = "green" })
 
 
 var gameState = 'notStarted',  
@@ -77,7 +80,7 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
     computerPointsElem = document.getElementById('js-computerPoints');
 
 function newGame() {
-  player.name = prompt('Please enter your name', 'imię gracza');
+  player.name = prompt('Please enter your name', 'Imię gracza');
   if (player.name) {
     player.score = computer.score = 0;
     gameState = 'started';
@@ -99,7 +102,9 @@ Math.floor(Math.random()*3)
 
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
+
     return possiblePicks[Math.floor(Math.random()*3)];
+
 }
 
 
@@ -113,6 +118,7 @@ function playerPick(playerPick) {
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
+    
 }
 
 function checkRoundWinner(playerPick, computerPick) {
@@ -128,6 +134,7 @@ function checkRoundWinner(playerPick, computerPick) {
         (computerPick == 'paper' &&  playerPick == 'rock')) {
 
         winnerIs = 'computer';
+
     }
 
     if (winnerIs == 'player') {
@@ -137,15 +144,39 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = getPossibleAnswer();
         computer.score++;      
     }
-    setGamePoints();    
+    setGamePoints();   
+    
 }
+
+
+function newColor() {
+
+
+	if (computerPick == "rock") {
+		document.getElementById( "computerPick" ).style.color = "blue";
+	}
+
+	if (computerPick == "paper") {
+		document.getElementById( "computerPick" ).style.color = "orange";
+	}
+
+	if (computerPick == "scissors") {
+		document.getElementById( "computerPick" ).style.color = "green";
+	}
+	
+}
+
+
+
+
+
 
 var z = Math.random();
 
 Math.floor(Math.random()*5)
 
 function getPossibleAnswer() {
-    var possibleAnswers = ['shit happaens', 'keep your hair on', "don't give up - try again!", "uppps, again?", "maybe next time"];
+    var possibleAnswers = ['Shit happens!', 'Keep your hair on!', "Don't give up - try again!", "Uppps, sorry :)", "Maybe next time!"];
     return possibleAnswers[Math.floor(Math.random()*5)];
 }
 
@@ -159,6 +190,7 @@ function playerPick(playerPick) {
 
     checkRoundWinner(playerPick, computerPick);
     gameOver()
+
 }
 
 

@@ -32,6 +32,8 @@ body {
 	padding: 15px;
 }
 
+
+
 .paper:hover {
 	background-color: orange;
 	border: 5px solid #FFF;
@@ -62,13 +64,16 @@ body {
 
 .red {
 	
-	font-size: 65px !important;
+	font-size: 150px !important;
 	color: red!important;
+	padding: 10px 100px!important;
 }
 
 
 .data {
 	color: #FFF;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .one {

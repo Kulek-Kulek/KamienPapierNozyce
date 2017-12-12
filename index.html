@@ -9,9 +9,11 @@
   </head>
   <body>
   	<div id="js-playerWinsElement" class="container win">
+      <audio controls><source src="welcome.mp3" type="audio/mp3"></audio>
   		<h3 class="text-center">CONGRATULATIOS! You've won!!!</h3>
 	</div>
 	<div id="js-computerWinsElement" class="container lose">
+    <audio controls><source src="welcome.mp3" type="audio/mp3"></audio>
 		<h3 class="text-center">Upppps! Compuetr wins!<br>But cheer up - better luck next time!</h3>
 	</div>
     <div id="js-welcomeElement" class="container welcome">
@@ -58,12 +60,11 @@
 	<div id="js-resultsTableElement" class="container">
   		<div class="row">
     		<div class="col-xs-5 text-center">
+
       			<span id="js-playerPoints" class="badge red">
       			0
       			</span>
-      			<span id="js-playerName" class="data">
-      			Player Name
-      			</span>
+      			
     		</div>
     		<div class="col-xs-2 text-center" class="white">
       			<p>VS</p>
@@ -72,20 +73,29 @@
       			<span id="js-computerPoints" class="badge red">
       			0
       			</span>
-      			<span class="data">Computer</span>
+      			
     		</div>
   		</div>
   		<div class="row">
     		<div class="col-xs-5 text-center">
-      			<span id="js-playerPick" class="data">
-        			Player selection
+      			<span id="js-playerName" class="data">
+      			Player Name
       			</span>
     		</div>
     		<div class="col-xs-2"></div>
     		<div class="col-xs-5 text-center">
-      			<span id="js-computerPick" class="data">
-        			Computer selection
+    			<span class="data">Computer</span>
+    		</div>
+    		<div class="col-xs-5 text-center">
+      			<span id="js-playerPick" class="data">
+        			<span>Player selection</span>
       			</span>
+    		</div>
+    		<div class="col-xs-2"></div>
+    		<div class="col-xs-5 text-center">
+      				<span id="js-computerPick" class="text-center data">
+      				Computer selection</span>
+
     		</div>
   		</div>
   		<div class="row">
@@ -96,13 +106,14 @@
     		</div>
     		<div class="col-xs-2"></div>
     		<div class="col-xs-5 text-center">
-      			<span id="js-computerResult" class="data">
+      			<span id="js-computerResult" class="text-center data">
         			Computer Score
       			</span>
     		</div>
   		</div>
-  		<audio autoplay><source src="welcome.mp3" type="audio/mp3">
-</audio>
+  		
+
+
 
 	</div>
 	
